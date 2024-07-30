@@ -18,6 +18,9 @@
 #else
 # include <unistd.h>
 # include <pwd.h>
+#ifndef _SC_GETPW_R_SIZE_MAX /* fixes specific cross compilation problem for AmigaOS */
+#define _SC_GETPW_R_SIZE_MAX 51
+#endif
 #endif
 
 #ifdef GIT_WIN32
